@@ -9,7 +9,7 @@
         "hora_inicio": "21:00",
         "hora_fin": "23:00",
         "descripcion": "Un espectáculo musical que celebra la cultura y la gastronomía de Gualeguaychú, con la participación especial de Nahuel Pennisi, uno de los referentes del folclore argentino.",
-        "imagen": "https://www.tvpublica.com.ar/wp-content/uploads/2022/01/NAHUEL-PENNISI-CON-LITO-VITALE-1.jpg"
+        "imagen": ""
       },
       {
         "id": 2,
@@ -20,7 +20,7 @@
         "hora_inicio": "22:00",
         "hora_fin": "00:00",
         "descripcion": "Un festival que combina la destreza de los jinetes con la música folclórica, con la presencia de Bruno Arias, uno de los exponentes del nuevo cancionero popular.",
-        "imagen": "https://www.tvpublica.com.ar/wp-content/uploads/2022/01/BRUNO-ARIAS-CON-LITO-VITALE-1.jpg"
+        "imagen": ""
       },
       {
         "id": 3,
@@ -31,7 +31,7 @@
         "hora_inicio": "23:00",
         "hora_fin": "01:00",
         "descripcion": "Un festival que reúne lo mejor de la doma y el folclore nacional, con la actuación de Chango Spasiuk, el maestro del acordeón chamamecero.",
-        "imagen": "https://www.tvpublica.com.ar/wp-content/uploads/2022/01/CHANGO-SPASIUK-CON-LITO-VITALE-1.jpg"
+        "imagen": ""
       },
       {
         "id": 4,
