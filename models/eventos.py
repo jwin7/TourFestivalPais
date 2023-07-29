@@ -1,4 +1,6 @@
 import json
+from typing import List
+from eventos import Evento
 
 class Evento:
     def __init__(self, id: int, nombre: str, artista: str, genero:str, id_ubicacion: int, 
@@ -33,3 +35,6 @@ class Evento:
         imagen = data["imagen"]
         
         return cls(id, nombre, artista, genero, id_ubicacion, hora_inicio, hora_fin, descripcion, imagen)
+
+
+   

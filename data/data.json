@@ -44,6 +44,64 @@
         "descripcion": "Un festival de música folclórica que reúne a grandes artistas nacionales e internacionales en la ciudad de Cafayate, Salta.",
         "imagen": ""
        }
-    ]   
+    ],  
+ 
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Jorge",
+        "apellido": "Gutierrez",
+        "historial_eventos": [1, 2]
+      },
+      {
+        "id": 2,
+        "nombre": "María",
+        "apellido": "Costa",
+        "historial_eventos": [1]
+      },
+      {
+        "id": 3,
+        "nombre": "Damián",
+        "apellido": "Canonica",
+        "historial_eventos": [1]
+      }
+    ],
+    
+    "reviews": [
+      {
+        "id": 1,
+        "id_evento": 1,
+        "id_usuario": 1,
+        "calificacion": 5,
+        "comentario": "¡Excelente evento!",
+        "animo": "positivo"
+      },
+      {
+        "id": 2,
+        "id_evento": 2,
+        "id_usuario": 1,
+        "calificacion": 4,
+        "comentario": "Muy buen evento, pero el sonido podría mejorar.",
+        "animo": "positivo"
+      },
+      {
+        "id": 3,
+        "id_evento": 3,
+        "id_usuario": 2,
+        "calificacion": 3,
+        "comentario": "El evento estuvo bien, pero no cumplió con mis expectativas, y no habia vino",
+        "animo": "negativo"
+      },
+      {
+        "id": 4,
+        "id_evento": 4,
+        "id_usuario": 3,
+        "calificacion": 5,
+        "comentario": "¡Excelente evento! No me acuerdo nada porque me tome todo el fernet",
+        "animo": "positivo"
+      }
+    ]
   }
+
+  
   

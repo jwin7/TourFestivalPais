@@ -22,4 +22,5 @@ class Usuario:
         
         return cls(id, nombre, apellido, historial_eventos)
      
-        
+
+
