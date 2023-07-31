@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Crear una ventana de Tkinter
 root = tk.Tk()
-root.title('Mi Aplicación')
+root.title('Tour Festival Pais')
 
 # Crear un widget Label para mostrar el nombre del usuario
 nombre_label = tk.Label(root, text='Nombre:')

@@ -1,6 +1,6 @@
 import json
 from typing import List
-from eventos import Evento
+#from eventos import Evento
 
 class Evento:
     def __init__(self, id: int, nombre: str, artista: str, genero:str, id_ubicacion: int, 
@@ -36,5 +36,30 @@ class Evento:
         
         return cls(id, nombre, artista, genero, id_ubicacion, hora_inicio, hora_fin, descripcion, imagen)
 
+def obtener_historial_eventos(id_usuario: int, data: dict) -> List[Evento]:
+# Buscar al usuario en la lista de usuarios
+    usuario = next((u for u in data["usuarios"] if u["id"] == id_usuario), None)
+    if not usuario:
+            print(f"No se encontró al usuario con ID {id_usuario}")
+            return []
 
-   
+    # Obtener los IDs de eventos a los que ha asistido el usuario
+    historial_eventos = usuario["historial_eventos"]
+
+    # Buscar los eventos correspondientes en la lista de eventos
+    eventos = [e for e in data["eventos"] if e["id"] in historial_eventos]
+
+    # Convertir los diccionarios de eventos en objetos Evento
+    eventos_asistidos = []
+    for evento in eventos:
+        e = Evento(evento["id"], evento["nombre"], evento["artista"], evento["genero"],
+                evento["ubicacion"], evento["hora_inicio"], evento["hora_fin"],
+                evento["descripcion"], evento["imagen"])
+        eventos_asistidos.append(e)
+
+    return eventos_asistidos
+    
+data = json.load(open('data\data.json'))
+eventos_asistidos = obtener_historial_eventos(1, data)
+for evento in eventos_asistidos:
+    print(evento.nombre)
