@@ -18,3 +18,4 @@ class RutaVisita:
         destino = data["destino"]
         
         return cls(id, nombre, destino)
+    
