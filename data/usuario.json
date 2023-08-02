@@ -8,14 +8,14 @@
     },
     {
       "id": 2,
-      "nombre": "María",
-      "apellido": "Costa",
+      "nombre": "Gabriel",
+      "apellido": "Vega",
       "historial_eventos": [1]
     },
     {
       "id": 3,
-      "nombre": "Damián",
-      "apellido": "Canonica",
+      "nombre": "Carlos",
+      "apellido": "Enrique",
       "historial_eventos": [1]
     }
   ]
