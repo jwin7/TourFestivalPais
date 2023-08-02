@@ -5,22 +5,22 @@
       "nombre": "Fiesta del Pescado y el Vino",
       "artista": "Nahuel Pennisi",
       "genero": "Folclore",
-      "ubicacion": "Entre Rios",
+      "ubicacion": "Gualeguaychú entre ríos",
       "hora_inicio": "21:00",
       "hora_fin": "23:00",
       "descripcion": "Un espectáculo musical que celebra la cultura y la gastronomía de Gualeguaychú, con la participación especial de Nahuel Pennisi, uno de los referentes del folclore argentino.",
-      "imagen": ""
+      "imagen": "Nahuel_pennisi.jpg"
     },
     {
       "id": 2,
       "nombre": "Festival Nacional de Jineteada y Folclore",
       "artista": "Bruno Arias",
       "genero": "Folclore",
-      "ubicacion": "Algun lado",
+      "ubicacion": "Diamante entre ríos",
       "hora_inicio": "22:00",
       "hora_fin": "00:00",
       "descripcion": "Un festival que combina la destreza de los jinetes con la música folclórica, con la presencia de Bruno Arias, uno de los exponentes del nuevo cancionero popular.",
-      "imagen": ""
+      "imagen": "Bruno_Arias.jpg"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "hora_inicio": "23:00",
       "hora_fin": "01:00",
       "descripcion": "Un festival que reúne lo mejor de la doma y el folclore nacional, con la actuación de Chango Spasiuk, el maestro del acordeón chamamecero.",
-      "imagen": ""
+      "imagen": "Chango_Spasiuk.jpg"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "hora_inicio": "21:00",
       "hora_fin": "02:00",
       "descripcion": "Un festival de música folclórica que reúne a grandes artistas nacionales e internacionales en la ciudad de Cafayate, Salta.",
-      "imagen": ""
+      "imagen": "Chaqueño_Palavecino.jpg"
      }
    
     ]
