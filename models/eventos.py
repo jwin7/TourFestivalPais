@@ -58,8 +58,48 @@ def obtener_historial_eventos(id_usuario: int, data: dict) -> List[Evento]:
         eventos_asistidos.append(e)
 
     return eventos_asistidos
+
+def indice_de_eventos(data: dict):
+    eventos = data["eventos"]
     
-data = json.load(open('data\data.json'))
-eventos_asistidos = obtener_historial_eventos(1, data)
-for evento in eventos_asistidos:
-    print(evento.nombre)
+    print("Índice de Eventos:")
+    for evento in eventos:
+        print(f"ID: {evento['id']}")
+        print(f"Nombre: {evento['nombre']}")
+        print(f"Artista: {evento['artista']}")
+        print(f"Género: {evento['genero']}")
+        print(f"Ubicación: {evento['ubicacion']}")
+        print("-------------------------------------")
+
+def buscar_y_filtrar_eventos(data: dict, nombre=None, genero=None, ubicacion=None):
+    eventos = data["eventos"]
+    
+    resultados = []
+    for evento in eventos:
+        # Filtrar por nombre, género y ubicación (si se proporcionan)
+        if nombre and nombre.lower() not in evento["nombre"].lower():
+            continue
+        if genero and genero.lower() not in evento["genero"].lower():
+            continue
+        if ubicacion and ubicacion.lower() not in evento["ubicacion"].lower():
+            continue
+        
+        resultados.append(evento)
+    
+    return resultados
+
+# Ejemplo de uso:
+data = json.load(open('data/eventos.json'))
+
+# Mostrar el Índice de Eventos
+indice_de_eventos(data)
+
+# Búsqueda y filtrado de eventos
+resultados = buscar_y_filtrar_eventos(data, genero="Folclore", ubicacion="Cafayate, Salta")
+print("Resultados de búsqueda:")
+for evento in resultados:
+    print(f"Nombre: {evento['nombre']}")
+    print(f"Artista: {evento['artista']}")
+    print(f"Género: {evento['genero']}")
+    print(f"Ubicación: {evento['ubicacion']}")
+    print("-------------------------------------")
