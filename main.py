@@ -26,7 +26,7 @@ class App(CTk):
     def __init__(self, imagenes=[]):
         super().__init__()
         #Setup principal
-        self.title("App Tour Musical 0.1")
+        self.title("App Tour Festival Pais")
         self.geometry("700x500+500+200")
         self.minsize(600,400)
         self.maxsize(800,600)
