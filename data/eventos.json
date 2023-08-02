@@ -43,6 +43,17 @@
       "hora_fin": "02:00",
       "descripcion": "Un festival de música folclórica que reúne a grandes artistas nacionales e internacionales en la ciudad de Cafayate, Salta.",
       "imagen": ""
+     },
+    {
+      "id": 5,
+      "nombre": "Serenata a Cafayate",
+      "artista": "Soledad Pastorutti",
+      "genero": "Folclore",
+      "ubicacion": "Cafayate, Salta",
+      "hora_inicio": "21:00",
+      "hora_fin": "02:00",
+      "descripcion": "Un festival de música folclórica que reúne a grandes artistas nacionales e internacionales en la ciudad de Cafayate, Salta.",
+      "imagen": ""
      }
     ]
 }
