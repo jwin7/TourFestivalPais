@@ -1,0 +1,22 @@
+{
+    "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Jorge",
+      "apellido": "Gutierrez",
+      "historial_eventos": [1, 2]
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "apellido": "Costa",
+      "historial_eventos": [1]
+    },
+    {
+      "id": 3,
+      "nombre": "Damián",
+      "apellido": "Canonica",
+      "historial_eventos": [1]
+    }
+  ]
+}
