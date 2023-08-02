@@ -1,12 +1,12 @@
 from customtkinter import *
 
-principal = "#52A5E0"
-titulo_color = "#EFF3F5"        #Se suele usar para los titulos y el texto en los botones
-texto_color = "#C8CDD0"         #Para los parrafos de texto
-subtitulo_color = "#A0A7AC"     #Para los subtitulos
-borde_color = "#2A3B47"         #Para el borde de los widgets y para el color del hover
-contenedor_color = "#212E36"    #Para el color del frame principal
-cuerpo_color = "#192229"        #Para los frames secundarios
+principal = "#FF5733"         
+titulo_color = "#F2F2F2"       
+texto_color = "#D4D4D4"        
+subtitulo_color = "#A0A7AC"    
+borde_color = "#C4C4C4"       
+contenedor_color = "#212E36" 
+cuerpo_color = "#192229" 
 
 
 
