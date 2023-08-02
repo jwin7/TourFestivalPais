@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "nombre": "Fiesta del Pescado y el Vino",
+        "destino": [1]
+    },
+    {
+
+        "id": 2,
+        "nombre": "Festival Nacional de Jineteada y Folclore",
+        "destino": [2]
+    },
+    {
+
+        "id": 3,
+        "nombre": "Festival Nacional de Doma y Folklore de Jesús María",
+        "destino": [3]
+    },
+    {
+
+        "id": 4,
+        "nombre":  "Serenata a Cafayate",
+        "destino": [4]
+    }
+]
