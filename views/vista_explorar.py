@@ -111,4 +111,4 @@ class Vista_Explorar(CTkFrame):
             self.valor_a_buscar_var.set(value="Ghost")
         else:
             self.genero_option.tkraise()
-            self.valor_a_buscar_var.set(value="Arena roc
+            self.valor_a_buscar_var.set(value="Aqui va lugar")

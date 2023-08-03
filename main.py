@@ -1,6 +1,7 @@
+
 from customtkinter import *
 from PIL import Image, ImageTk
-from models.evento import Evento
+from models.eventos import Evento
 from views.vista_inicio import Vista_Inicio
 from views.vista_login import Vista_Login
 from views.vista_explorar import Vista_Explorar
@@ -32,11 +33,12 @@ class App(CTk):
         self.maxsize(800,600)
 
         #Se cargan los eventos y las ubicaciones
-        self.eventos = Evento.cargar_de_json("data/evento.json")
+        self.eventos = Evento.cargar_de_json("data/eventos.json")
         self.ubicaciones = Ubicacion.cargar_de_json("data/ubicacion.json")
         self.comentarios = Review.cargar_de_json("data/review.json")
         self.usuarios = Usuario.cargar_de_json("data/usuario.json")
         self.imagenes = imagenes
+        
 
         #Inicializar
         self.inicializar()
