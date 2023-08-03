@@ -1,3 +1,4 @@
+
 import json
 
 class Ubicacion:
@@ -11,15 +12,15 @@ class Ubicacion:
     def to_json(self):
         return {"id": self.id, "nombre": self.nombre, "direccion": self.direccion, "latitud": self.latitud, "longitud": self.longitud}
 
-@classmethod
-def cargar_de_json(cls, archivo_json):
-    with open(archivo_json, "r") as f:
-        data = json.load(f)
+    @classmethod
+    def cargar_de_json(cls, archivo_json):
+        with open(archivo_json, "r") as f:
+            data = json.load(f)
 
-    ubicaciones = []
-    for item in data:
-        ubicacion = cls(id=item["id"], nombre=item["nombre"], direccion=item["direccion"], latitud=item["latitud"], longitud=item["longitud"])
-        ubicaciones.append(ubicacion)
+        ubicaciones = []
+        for item in data:
+            ubicacion = cls(id=item["id"], nombre=item["nombre"], direccion=item["direccion"], latitud=item["latitud"], longitud=item["longitud"])
+            ubicaciones.append(ubicacion)
 
-    return ubicaciones
+        return ubicaciones
 
