@@ -1,7 +1,9 @@
-
 from customtkinter import *
 from PIL import Image, ImageTk
 from models.eventos import Evento
+from models.ubicacion import Ubicacion
+from models.review import Review
+from models.usuario import Usuario
 from views.vista_inicio import Vista_Inicio
 from views.vista_login import Vista_Login
 from views.vista_explorar import Vista_Explorar
@@ -17,9 +19,7 @@ from controllers.controlador_eventos import Controlador_Eventos
 from controllers.controlador_detalles import Controlador_Detalles
 from controllers.controlador_mapa import Controlador_Mapa
 from controllers.controlador_usuario import Controlador_usuario
-from models.ubicacion import Ubicacion
-from models.review import Review
-from models.usuario import Usuario
+
 
 set_appearance_mode("dark")
 
@@ -32,13 +32,12 @@ class App(CTk):
         self.minsize(600,400)
         self.maxsize(800,600)
 
-        #Se cargan los eventos y las ubicaciones
+        # Se cargan los eventos y las ubicaciones
         self.eventos = Evento.cargar_de_json("data/eventos.json")
         self.ubicaciones = Ubicacion.cargar_de_json("data/ubicacion.json")
         self.comentarios = Review.cargar_de_json("data/review.json")
         self.usuarios = Usuario.cargar_de_json("data/usuario.json")
         self.imagenes = imagenes
-        
 
         #Inicializar
         self.inicializar()

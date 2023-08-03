@@ -29,7 +29,7 @@ class Vista_Inicio(CTkFrame):
     #Creación de widgets
     def crear_widgets(self):
         #Etiqueta
-        self.fondo = CTkLabel(self, text="", image=self.parent.cargar_fondo("fondo_2.jpg"))
+        self.fondo = CTkLabel(self, text="", image=self.parent.cargar_fondo("cargar fondo"))
 
         #Botones
         self.boton_explorar = CTkButton(master=self, text="Explorar", 

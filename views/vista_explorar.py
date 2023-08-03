@@ -61,7 +61,7 @@ class Vista_Explorar(CTkFrame):
         
         #Variable de contról
         self.tipo_filtro_var = StringVar(value="Artista")
-        self.valor_a_buscar_var = StringVar(value="Ghost")
+        self.valor_a_buscar_var = StringVar(value="Artista")
 
 
         #Option_Menu
@@ -73,7 +73,7 @@ class Vista_Explorar(CTkFrame):
                                                 dropdown_hover_color=borde_color,
                                                 dropdown_text_color=titulo_color,
                                                 text_color=titulo_color)
-        self.artista_option = CTkOptionMenu(self, values=["Ghost", "Luis Miguel", "Pedro Capo"], variable=self.valor_a_buscar_var,
+        self.artista_option = CTkOptionMenu(self, values=["Cargar lista de artistas"], variable=self.valor_a_buscar_var,
                                             fg_color=cuerpo_color, 
                                             button_color=contenedor_color,
                                             button_hover_color=borde_color,
@@ -81,9 +81,7 @@ class Vista_Explorar(CTkFrame):
                                             dropdown_hover_color=borde_color,
                                             dropdown_text_color=titulo_color,
                                             text_color=titulo_color)
-        self.genero_option = CTkOptionMenu(self, values=["Arena rock", "Balada", "Bolero", "Dance-Pop", "Doom metal", 
-                                                         "Hard rock", "Heavy metal", "Mariachi", "Pop latino", "Pop rock", 
-                                                         "Rock progresivo", "Rock psicodelico"], variable=self.valor_a_buscar_var,
+        self.genero_option = CTkOptionMenu(self, values=["Cargar lista de tipos de musica"], variable=self.valor_a_buscar_var,
                                                          fg_color=cuerpo_color, 
                                                          button_color=contenedor_color,
                                                          button_hover_color=borde_color,
@@ -108,7 +106,7 @@ class Vista_Explorar(CTkFrame):
         print(choice)
         if choice == "Artista":
             self.artista_option.tkraise()
-            self.valor_a_buscar_var.set(value="Ghost")
+            self.valor_a_buscar_var.set(value="cargar artista")
         else:
             self.genero_option.tkraise()
             self.valor_a_buscar_var.set(value="Aqui va lugar")

@@ -50,7 +50,7 @@ class Vista_Login(CTkFrame):
                                                                               self.entrada_apellido.get()))
 
         #Entradas
-        self.fondo = CTkLabel(self, image=self.parent.cargar_fondo("fondo_3.jpg"))
+        self.fondo = CTkLabel(self, image=self.parent.cargar_fondo("cargar fondo"))
         self.entrada_nombre = CTkEntry(self.frame_interior, width=200, height=30, placeholder_text="Nombre")
         self.entrada_apellido = CTkEntry(self.frame_interior, width=200, height=30, placeholder_text="Apellido")
 
