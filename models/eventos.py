@@ -3,13 +3,13 @@ from typing import List
 #from eventos import Evento
 
 class Evento:
-    def __init__(self, id: int, nombre: str, artista: str, genero:str, id_ubicacion: int, 
+    def __init__(self, id: int, nombre: str, artista: str, genero:str, ubicacion: str, 
                  hora_inicio: str, hora_fin: str, descripcion: str, imagen: str ):
         self.id = id
         self.nombre = nombre
         self.artista = artista
         self.genero = genero
-        self.id_ubicacion = id_ubicacion
+        self.ubicacion = ubicacion
         self.hora_inicio = hora_inicio
         self.hora_fin = hora_fin
         self.descripcion = descripcion
@@ -17,7 +17,7 @@ class Evento:
 
     def to_json(self) :
         return {"id": self.id, "nombre": self.nombre, "artista": self.artista,
-                "genero": self.genero, "id_ubicacion": self.id_ubicacion, "hora_inicio": self.hora_inicio,
+                "genero": self.genero, "ubicacion": self.ubicacion, "hora_inicio": self.hora_inicio,
                 "hora_fin": self.hora_fin, "descripcion": self.descripcion, "imagen": self.imagen}
     
     @classmethod
@@ -28,13 +28,22 @@ class Evento:
         nombre = data["nombre"]
         artista = data["artista"]
         genero = data["genero"]
-        id_ubicacion = data["id_ubicacion"]
+        ubicacion = data["ubicacion"]
         hora_inicio = data["hora_inicio"]
         hora_fin = data["hora_fin"]
         descripcion = data["descripcion"]
         imagen = data["imagen"]
         
-        return cls(id, nombre, artista, genero, id_ubicacion, hora_inicio, hora_fin, descripcion, imagen)
+        return cls(id, nombre, artista, genero, ubicacion, hora_inicio, hora_fin, descripcion, imagen)
+
+    @classmethod
+    def cargar_de_json(cls, archivo):
+        with open(archivo, 'r') as f:
+            data = json.load(f)
+            eventos = [cls(**evento) for evento in data["eventos"]]
+        return eventos
+
+
 
 def obtener_historial_eventos(id_usuario: int, data: dict) -> List[Evento]:
 
@@ -54,9 +63,8 @@ def obtener_historial_eventos(id_usuario: int, data: dict) -> List[Evento]:
     for evento in eventos:
         e = Evento(evento["id"], evento["nombre"], evento["artista"], evento["genero"],
                 evento["ubicacion"], evento["hora_inicio"], evento["hora_fin"],
-                evento["descripcion"], evento["imagen"])
+                evento["descripcion"], evento["imagen"])  # <-- El problema esta aqui.. estaba
         eventos_asistidos.append(e)
-
     return eventos_asistidos
 
 def indice_de_eventos(data: dict):
@@ -88,6 +96,29 @@ def buscar_y_filtrar_eventos(data: dict, nombre=None, genero=None, ubicacion=Non
     
     return resultados
 
+@classmethod
+def obtener_ubicacion(cls, direccion, ubicaciones):
+    for ubicacion in ubicaciones:
+        if ubicacion["direccion"] == direccion:
+            return ubicacion["id"]
+    return None
+
+@classmethod
+def cargar_de_json(cls, archivo):
+    with open(archivo, 'r') as f:
+        data = json.load(f)
+        eventos = []
+        ubicaciones = json.load(open("data/ubicacion.json"))
+
+        for evento in data["eventos"]:
+            id_ubicacion = cls.obtener_ubicacion(evento["ubicacion"], ubicaciones)
+            if id_ubicacion is not None:
+                evento["id_ubicacion"] = id_ubicacion
+                eventos.append(cls(**evento))
+            else:
+                print(f"No se encontró la ubicación para el evento '{evento['nombre']}'")
+
+    return eventos
 # Ejemplo de uso:
 data = json.load(open('data/eventos.json'))
 
