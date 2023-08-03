@@ -3,7 +3,7 @@ from typing import List
 #from eventos import Evento
 
 class Evento:
-    def __init__(self, id: int, nombre: str, artista: str, genero:str, ubicacion: str, 
+    def __init__(self, id: int, nombre: str, artista: str, genero:str, ubicacion: int, #aqui cambie int por str
                  hora_inicio: str, hora_fin: str, descripcion: str, imagen: str ):
         self.id = id
         self.nombre = nombre
@@ -40,8 +40,10 @@ class Evento:
     def cargar_de_json(cls, archivo):
         with open(archivo, 'r') as f:
             data = json.load(f)
-            eventos = [cls(**evento) for evento in data["eventos"]]
-        return eventos
+            eventos = [cls(id=int(evento["id"]), nombre=evento["nombre"], artista=evento["artista"],
+               genero=evento["genero"], ubicacion=evento["ubicacion"], hora_inicio=evento["hora_inicio"],
+               hora_fin=evento["hora_fin"], descripcion=evento["descripcion"], imagen=evento["imagen"])
+           for evento in data["eventos"]]
 
 
 
@@ -111,24 +113,24 @@ def cargar_de_json(cls, archivo):
         ubicaciones = json.load(open("data/ubicacion.json"))
 
         for evento in data["eventos"]:
-            id_ubicacion = cls.obtener_ubicacion(evento["ubicacion"], ubicaciones)
-            if id_ubicacion is not None:
-                evento["id_ubicacion"] = id_ubicacion
+            ubicacion = cls.obtener_ubicacion(evento["ubicacion"], ubicaciones)
+            if ubicacion is not None:
+                evento["ubicacion"] = ubicacion
                 eventos.append(cls(**evento))
             else:
                 print(f"No se encontró la ubicación para el evento '{evento['nombre']}'")
 
     return eventos
 # Ejemplo de uso:
-data = json.load(open('data/eventos.json'))
+#data = json.load(open('data/eventos.json'))
 
 # Mostrar el Índice de Eventos
-indice_de_eventos(data)
+#indice_de_eventos(data)
 
 # Búsqueda y filtrado de eventos
-resultados = buscar_y_filtrar_eventos(data, genero="Folclore", ubicacion="Cafayate, Salta")
-print("Resultados de búsqueda:")
-for evento in resultados:
+#resultados = buscar_y_filtrar_eventos(data, genero="Folclore", ubicacion="Cafayate, Salta")
+#print("Resultados de búsqueda:")
+#for evento in resultados:
     print(f"Nombre: {evento['nombre']}")
     print(f"Artista: {evento['artista']}")
     print(f"Género: {evento['genero']}")
