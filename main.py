@@ -121,7 +121,4 @@ class App(CTk):
                 
 
 
-
-
-
 App()
