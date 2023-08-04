@@ -20,8 +20,8 @@ class Evento:
                 "genero": self.genero, "ubicacion": self.ubicacion, "hora_inicio": self.hora_inicio,
                 "hora_fin": self.hora_fin, "descripcion": self.descripcion, "imagen": self.imagen}
     
-    @classmethod
-    def from_json(cls, json_data):
+    #@classmethod
+    #def from_json(cls, json_data):
         data = json.loads(json_data)
         
         id = data["id"]
@@ -43,8 +43,32 @@ class Evento:
             eventos = [cls(id=int(evento["id"]), nombre=evento["nombre"], artista=evento["artista"],
                genero=evento["genero"], ubicacion=evento["ubicacion"], hora_inicio=evento["hora_inicio"],
                hora_fin=evento["hora_fin"], descripcion=evento["descripcion"], imagen=evento["imagen"])
-           for evento in data["eventos"]]
+            for evento in data["eventos"]]
+            return eventos
+    
+    @classmethod
+    def obtener_ubicacion(cls, direccion, ubicaciones):
+        for ubicacion in ubicaciones:
+            if ubicacion["direccion"] == direccion:
+                return ubicacion["id"]
+        return None
+    
+    #@classmethod
+    #def cargar_de_json(cls, archivo):
+        #with open(archivo, 'r') as f:
+            #data = json.load(f)
+            #eventos = []
+            #ubicaciones = json.load(open("data/ubicacion.json"))
 
+            #for evento in data["eventos"]:
+                #ubicacion = cls.obtener_ubicacion(evento["ubicacion"], ubicaciones)
+                #if ubicacion is not None:
+                    #evento["ubicacion"] = ubicacion
+                    #eventos.append(cls(**evento))
+                #else:
+                 #   print(f"No se encontró la ubicación para el evento '{evento['nombre']}'")
+
+        #return eventos
 
 
 def obtener_historial_eventos(id_usuario: int, data: dict) -> List[Evento]:
@@ -105,22 +129,7 @@ def obtener_ubicacion(cls, direccion, ubicaciones):
             return ubicacion["id"]
     return None
 
-@classmethod
-def cargar_de_json(cls, archivo):
-    with open(archivo, 'r') as f:
-        data = json.load(f)
-        eventos = []
-        ubicaciones = json.load(open("data/ubicacion.json"))
 
-        for evento in data["eventos"]:
-            ubicacion = cls.obtener_ubicacion(evento["ubicacion"], ubicaciones)
-            if ubicacion is not None:
-                evento["ubicacion"] = ubicacion
-                eventos.append(cls(**evento))
-            else:
-                print(f"No se encontró la ubicación para el evento '{evento['nombre']}'")
-
-    return eventos
 # Ejemplo de uso:
 #data = json.load(open('data/eventos.json'))
 
