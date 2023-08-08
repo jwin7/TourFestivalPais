@@ -1,26 +1,19 @@
 import json
 
 class Usuario:
-    def __init__(self, id, nombre, apellido, historial_eventos):
+    def __init__(self,id: int, nombre: str, apellido: str, historial_eventos: list[int]):
         self.id = id
         self.nombre = nombre
         self.apellido = apellido
         self.historial_eventos = historial_eventos
 
-    def to_json(self):
-        return {
-            "id": self.id,
-            "nombre": self.nombre,
-            "apellido": self.apellido,
-            "historial_eventos": self.historial_eventos
-        }
 
     @classmethod
-    def from_json(cls, json_data):
-        data = json.loads(json_data)
-        return cls(
-            data["id"],
-            data["nombre"],
-            data["apellido"],
-            data["historial_eventos"]
-        )
+    def cargar_de_json(cls, archivo):
+        with open(archivo, "r") as f:
+            data = json.load(f)
+        return [cls(**usuario) for usuario in data]
+    
+    @classmethod
+    def añadir_usuario(cls, usuario):
+        return cls(**usuario)
