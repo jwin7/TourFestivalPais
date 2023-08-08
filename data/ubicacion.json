@@ -1,28 +1,20 @@
-{
-    "ubicacion":[
-        {
-            "id" : 1,
-            "direccion": "Paseo del Puerto gualeguaychú entre ríos",
-            "latitud": -33.015292,
-            "longitud": -58.503742
-        },
-        {
-            "id" : 2,
-            "direccion": "Campo de jineteada y Folklore",
-            "latitud": -32.076207,
-            "longitud": -60.647680
-        },
-        {
-            "id" : 3,
-            "direccion": "Cleto Peña ",
-            "latitud": -30.973983, 
-            "longitud":-64.093092
-        },  
-        {
-            "id" : 4,
-            "direccion": "Bodega encantada, Chacabuco 35",
-            "latitud": -26.075547, 
-            "longitud":-65.976835
-        }
-    ]
-}
+[
+    {
+        "id" : 1,
+        "direccion": "Paseo del Puerto gualeguaychú entre ríos",
+        "latitud": -33.015292,
+        "longitud": -58.503742
+    },
+    {
+        "id" : 2,
+        "direccion":  "Campo de jineteada y Folklore",
+        "latitud": -32.076207,
+        "longitud": -60.647680
+    },
+    {
+        "id" : 3,
+        "direccion": "Cleto Peña",
+        "latitud": -30.973983, 
+        "longitud": -64.093092
+    }
+]
