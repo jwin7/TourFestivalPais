@@ -1,5 +1,4 @@
-{
-  "reviews": [
+[
     {
       "id": 1,
       "id_evento": 1,
@@ -23,14 +22,5 @@
       "calificacion": 3,
       "comentario": "El evento estuvo bien, pero no cumplió con mis expectativas, y no habia vino",
       "animo": "negativo"
-    },
-    {
-      "id": 4,
-      "id_evento": 4,
-      "id_usuario": 3,
-      "calificacion": 5,
-      "comentario": "¡Excelente evento! No me acuerdo nada porque me tome todo el fernet",
-      "animo": "positivo"
     }
-  ]
-}  
+] 
