@@ -1,5 +1,4 @@
-{
-    "rutaVisita": [
+[
         {
             "id": 1,
             "nombre": "Fiesta del Pescado y el Vino",
@@ -15,13 +14,6 @@
 
             "id": 3,
             "nombre": "Festival Nacional de Doma y Folklore de Jesús María",
-            "destino": [3]
-        },
-        {
-
-            "id": 4,
-            "nombre":  "Serenata a Cafayate",
-            "destino": [4]
+            "destino": [3,2]
         }
-    ]
-}
+ ]
