@@ -106,7 +106,7 @@ class Vista_Explorar(CTkFrame):
         print(choice)
         if choice == "Artista":
             self.artista_option.tkraise()
-            self.valor_a_buscar_var.set(value="cargar artista")
+            self.valor_a_buscar_var.set(value="Nahuel Pennesi")
         else:
             self.genero_option.tkraise()
-            self.valor_a_buscar_var.set(value="Aqui va lugar")
+            self.valor_a_buscar_var.set(value="Gualeguaychu, Entre Rios")
