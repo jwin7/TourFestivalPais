@@ -17,3 +17,12 @@ class Usuario:
     @classmethod
     def añadir_usuario(cls, usuario):
         return cls(**usuario)
+
+#usuarios = Usuario.cargar_de_json("data/usuarios.json")
+
+#for usuario in usuarios:
+    #print(usuario.id)
+    #print(usuario.nombre)
+    #print(usuario.apellido)
+    #print(usuario.historial_eventos)
+    #print("")

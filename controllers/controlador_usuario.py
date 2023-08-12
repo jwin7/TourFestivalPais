@@ -11,3 +11,5 @@ class Controlador_usuario:
 
     def quitar_boton_exit(asd):
         pass
+
+
