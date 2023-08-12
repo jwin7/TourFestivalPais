@@ -7,7 +7,7 @@ class RutaVisita:
         self.destino = destino
 
     def to_json(self):
-        return {"id": self.id, "nombre": self.nombre, "destino": self.destino}
+        return {"id": self.id, "nombre": {self.nombre}, "destino": {self.destino}}
 
     @classmethod
     def from_json(cls, json_data):
